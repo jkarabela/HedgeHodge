@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas Karabela: Curator of Curiosities & Purveyor of the Unexpected</title>
+    <!-- Importing Latin Modern Font (LaTeX Style) -->
+    <link href="https://fonts.googleapis.com/css2?family=Latin+Modern+Roman:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Adding MathJax for LaTeX-style equations -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$','$'], ['\(','\)']],
+                displayMath: [['$$','$$'], ['\[','\]']]
+            }
+        });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <style>
+        body {
+            font-family: 'Latin Modern Roman', serif;
+            margin: 40px;
+            color: #000;
+        }
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #34495e;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        ul ul {
+            list-style-type: circle;
+            padding-left: 20px;
+        }
+        li {
+            margin: 5px 0;
+        }
+        b {
+            color: black;
+        }
+        a {
+            text-decoration: underline;
+            color: #0056b3;
+            cursor: pointer;
+        }
+        a:hover {
+            color: #004080;
+        }
+        .course-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        .tabs {
+            margin: 20px 0;
+        }
+        .tab-button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .tab-button:hover {
+            background-color: #2980b9;
+        }
+        .assignment-list {
+            display: none;
+            padding-left: 20px;
+        }
+    </style>
+    <script>
+        function toggleContent(id) {
+            var el = document.getElementById(id);
+            if (el.style.display === 'none' || el.style.display === '') {
+                el.style.display = 'block';
+                window.scrollTo(0, 0);
+            } else {
+                el.style.display = 'none';
+            }
+        }
+        function toggleAssignments(id) {
+            var el = document.getElementById(id);
+            if (el.style.display === 'none' || el.style.display === '') {
+                el.style.display = 'block';
+            } else {
+                el.style.display = 'none';
+            }
+        }
+        window.onload = function() {
+            var contents = document.getElementsByClassName('course-content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Thomas Karabela: Curator of Curiosities & Purveyor of the Unexpected</h1>
+    <h2>Announcements</h2>
+    <ul>
+        <li><b>Feb 20:</b> Creation of the archives, welcome and enjoy any and all things you need.</li>
+    </ul>
+
+    <h2>Misc</h2>
+    <ul>
+        <li>Current Readings:
+            <ul>
+                <li><a href="documents/algebra-serge-lang.pdf" target="_blank"><u>Serge Lang: Algebra</u></a> - Currently reading through chap. 8 sections 1-6 for a presentation I'm to give to my reseach advisor</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Courses</h2>
+    <ul>
+        <li><a onclick="toggleContent('STAT231')"><u>STAT231</u></a></li>
+        <!-- Add more course codes as needed -->
+    </ul>
+
+    <!-- STAT231 Content -->
+    <div id="STAT231" class="course-content">
+        <h1>STAT231 - Statistics for Data Analysis</h1>
+        <p><b>Course Description:</b> This course provides a systematic approach to empirical problem solving which will enable students to critically assess the sampling protocol and conclusions of an empirical study including the possible sources of error in the study and whether evidence of a causal relationship can be reasonably concluded.</p>
+        
+        <p><b>My Thoughts:</b> Really fun course in my opinion. I am very fond of stats, and I love it in quantum mechanics; this was a very different approach to it all however. This course was all about sampling, something which would have been useful in any other STEM field. Fortunately, I don't have to talk to many people as a theoretical physicist, so no sampling for me!</p>
+
+        <!-- Clickable Assignments -->
+        <p><a onclick="toggleAssignments('STAT231-assignments')"><u>Assignments</u></a></p>
+        <ul id="STAT231-assignments" class="assignment-list">
+            <li><a href="STAT231/STAT_231___A1.pdf" target="_blank"><u>STAT 231 A1</u></a>
+                <ul>
+                    <li>Q1.b you need to show the generic result for all natural numbers M (-2)</li>
+                    <li>Q2.e when the number of bins increases then the histogram over-represents the distribution of the data (-0.5)</li>
+                    <li>Q2.e when the number of bins is small, the histogram under-represents the distribution of the data (-0.5)</li>
+                    <li>Q3.a The 2500 form a sample not the population (-1)</li>
+                    <li>Q3.b This is an observational study; a sample survey would require directly collecting data from players and not experimental because no variables are being manipulated (-2)</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>
