@@ -175,12 +175,33 @@
 </head>
 <body>
     <div class="terminal">
-        <div class="header">UNIVERSITY OF WATERLOO TERMINAL - LOGGED IN AS: tkarabel@uwaterloo.ca (4A STUDENT)</div>
+        <div class="header">
+            UNIVERSITY OF WATERLOO TERMINAL - LOGGED IN AS: tkarabel@uwaterloo.ca (4A STUDENT)
+            <div style="float: right; font-weight: normal;" id="clock"></div>
+        </div>
         
         <!-- Home Page -->
         <div id="home" class="page active">
             <div class="home-title">THOMAS KARABELA</div>
             <div class="home-subtitle">Mathematical Physics & Pure Math</div>
+            
+            <div class="section">
+                <div class="section-title">Highlights</div>
+                <div class="content">
+                    <div class="item">
+                        <span class="date">LANGS</span>
+                        <span class="description">Python, C++, Mathematica, MATLAB, LaTeX, JavaScript</span>
+                    </div>
+                    <div class="item">
+                        <span class="date">RESEARCH</span>
+                        <span class="description">Quantum field theory, Statistical mechanics, Group theory applications</span>
+                    </div>
+                    <div class="item">
+                        <span class="date">INTERESTS</span>
+                        <span class="description">Rock climbing, Chess, Classical music, Philosophy of science</span>
+                    </div>
+                </div>
+            </div>
             
             <div class="section">
                 <div class="section-title">Main Menu</div>
@@ -415,8 +436,27 @@
             requestAnimationFrame(animateWave);
         }
 
-        // Start animation when page loads
+        // Update clock
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', { 
+                hour12: false,
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            const dateString = now.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit'
+            });
+            document.getElementById('clock').textContent = `${dateString} ${timeString}`;
+        }
+
+        // Start animation and clock when page loads
         animateWave();
+        updateClock();
+        setInterval(updateClock, 1000);
     </script>
 </body>
 </html>
